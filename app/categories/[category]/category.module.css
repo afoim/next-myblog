@@ -1,0 +1,65 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.post {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--card-hover);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+}
+
+.postContent {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.post time {
+  color: var(--link-color);
+  font-size: 0.9rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--nav-background);
+  font-size: 0.8rem;
+  border: 1px solid var(--link-color);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tag:hover {
+  opacity: 1;
+}

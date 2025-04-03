@@ -1,0 +1,136 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.summary {
+  color: var(--link-color);
+  margin: 1rem 0 2rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--card-hover);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.result:hover {
+  transform: translateY(-2px);
+}
+
+.result h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  color: var(--link-color);
+  font-size: 0.9rem;
+}
+
+.category {
+  padding: 0.2rem 0.8rem;
+  border-radius: 16px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.excerpt {
+  color: var(--link-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--foreground);
+  color: var(--background);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.backButton:hover {
+  opacity: 0.9;
+}
+
+.matches {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--nav-background);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.matches summary {
+  cursor: pointer;
+  color: var(--link-color);
+}
+
+.matches summary:hover {
+  color: var(--link-hover);
+}
+
+.matchDetails {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  color: var(--link-color);
+}
+
+.matchDetails p {
+  margin: 0.5rem 0;
+}
+
+.matchDetails ul {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+}
+
+.matchDetails li {
+  margin: 0.25rem 0;
+  font-style: italic;
+}
+
+.resultTitle {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 添加一个包装类来使用全局选择器 */
+.highlightWrapper :global(mark) {
+  background-color: var(--code-highlight);
+  color: var(--foreground);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 1px solid rgba(var(--card-border-rgb), 0.3);
+}
+
+.matchDetails :global(mark) {
+  background-color: var(--code-highlight);
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+}

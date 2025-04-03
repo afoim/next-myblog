@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+  --nav-background: #ffffff;
+  --nav-foreground: #333333;
+  --nav-shadow: rgba(0, 0, 0, 0.1);
+  --card-hover: rgba(0, 0, 0, 0.05);
+  --link-color: #666666;
+  --link-hover: #000000;
+  --code-highlight: rgba(255, 255, 0, 0.15); /* 添加高亮颜色变量 */
+  --code-block-bg: #f8f8f8; /* 浅色主题代码块背景 */
+  --code-text: #333333; /* 浅色主题代码文本颜色 */
 }
 
 @theme inline {
@@ -12,15 +23,199 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* 浅色主题下隐藏深色代码高亮样式 */
+:root .hljs-dark {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 80, 80, 80;
+    --nav-background: #111111;
+    --nav-foreground: #ffffff;
+    --nav-shadow: rgba(0, 0, 0, 0.3);
+    --card-hover: rgba(255, 255, 255, 0.05);
+    --link-color: #999999;
+    --link-hover: #ffffff;
+    --code-background: #1a1a1a; /* 深色主题代码块背景 */
+    --code-highlight: rgba(255, 255, 100, 0.2); /* 深色主题下的高亮颜色 */
+    --code-text: #e6e6e6; /* 深色主题代码文本颜色 */
   }
+
+  /* 深色主题下隐藏浅色代码高亮样式 */
+  :root .hljs-light {
+    display: none;
+  }
+  :root .hljs-dark {
+    display: block;
+  }
+
+  pre {
+    background: var(--code-background);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 代码块样式增强 */
+pre {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  background: var(--code-block-bg);
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  box-shadow: 0 2px 8px rgba(var(--card-rgb), 0.1);
+  color: var(--code-text);
+}
+
+pre code.hljs {
+  background: transparent;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--code-text);
+}
+
+/* 调整 highlight.js 的颜色 */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-section {
+  color: #c678dd !important; /* 紫色 */
+}
+
+.hljs-string,
+.hljs-name,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote {
+  color: #98c379 !important; /* 绿色 */
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #d19a66 !important; /* 橙色 */
+}
+
+.hljs-comment,
+.hljs-deletion {
+  color: #7f848e !important; /* 灰色 */
+}
+
+.hljs-function,
+.hljs-built_in {
+  color: #61afef !important; /* 蓝色 */
+}
+
+.hljs-class {
+  color: #e5c07b !important; /* 淡黄色 */
+}
+
+/* 代码行号 */
+.hljs-line-numbers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1rem 0.5rem;
+  border-right: 1px solid var(--nav-background);
+  color: var(--link-color);
+  user-select: none;
+}
+
+:global(mark) {
+  background-color: var(--code-highlight);
+  color: var(--foreground);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+/* 代码块样式 */
+.codeblock-wrapper {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.codeblock-wrapper pre {
+  margin: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.codeblock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--code-background);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  border-bottom: none;
+}
+
+.language {
+  font-size: 0.8rem;
+  color: var(--link-color);
+  text-transform: uppercase;
+}
+
+.toggle-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--code-background);
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: var(--link-color);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.toggle-button svg {
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.expanded svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }
