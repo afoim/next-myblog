@@ -12,7 +12,9 @@ export default function Home() {
             <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a>
             构建，大部分功能使用
             <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a>
-            实现，由
+            实现，站点采用
+            <a href="https://nextjs.org/docs/app/building-your-application/rendering/server-components" target="_blank" rel="noopener noreferrer">SSR渲染</a>
+            ，由
             <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude 3.5 Sonnet</a>
             进行全自动开发，部署在
             <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel CDN</a>
