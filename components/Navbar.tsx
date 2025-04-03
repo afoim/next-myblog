@@ -11,6 +11,9 @@ export default function Navbar() {
           <Home size={24} />
         </Link>
       </div>
+      <div className={styles.titleWrapper}>
+        <h1 className={styles.title}>二叉树树的博客</h1>
+      </div>
       <div className={styles.links}>
         <Link href="/search">搜索</Link>
         <a href="https://link.me/acofork" target="_blank" rel="noopener noreferrer">关于</a>
