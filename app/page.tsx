@@ -17,7 +17,7 @@ export default function Home() {
             进行全自动开发，部署在
             <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel CDN</a>
             上，开源于
-            <a href="https://github.com/afoim" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="https://github.com/afoim/next-myblog" target="_blank" rel="noopener noreferrer">Github</a>
           </p>
         </div>
       </div>
