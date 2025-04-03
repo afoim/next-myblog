@@ -1,5 +1,4 @@
 module.exports = {
-    output: 'export', // ✅ 启用静态导出模式
     typescript: {
       ignoreBuildErrors: true, // 允许 TypeScript 错误继续构建
     },
