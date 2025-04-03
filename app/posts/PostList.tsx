@@ -59,25 +59,21 @@ export default function PostList({ initialPosts }: { initialPosts: Post[] }) {
                       })}
                     </time>
                     {post.categories && (
-                      <Link 
-                        href={`/categories/${encodeURIComponent(post.categories)}`} 
-                        className={styles.category}
-                      >
+                      <span className={styles.category}>
                         {post.categories}
-                      </Link>
+                      </span>
                     )}
                   </div>
                 </div>
                 {post.tags && (
                   <div className={styles.tags}>
                     {post.tags.map(tag => (
-                      <TagLink 
-                        href={`/tags/${encodeURIComponent(tag)}`} 
+                      <span
                         key={tag} 
                         className={styles.tag}
                       >
                         {tag}
-                      </TagLink>
+                      </span>
                     ))}
                   </div>
                 )}

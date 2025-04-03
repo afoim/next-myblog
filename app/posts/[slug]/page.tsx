@@ -33,21 +33,20 @@ export default async function Post({ params }: PageParams) {
                 })}
               </time>
               {post.categories && (
-                <Link href={`/categories/${post.categories}`} className={styles.category}>
+                <span className={styles.category}>
                   {post.categories}
-                </Link>
+                </span>
               )}
             </div>
             {post.tags && (
               <div className={styles.tags}>
                 {post.tags.map(tag => (
-                  <Link 
-                    href={`/tags/${tag}`}
+                  <span 
                     key={tag} 
                     className={styles.tag}
                   >
                     {tag}
-                  </Link>
+                  </span>
                 ))}
               </div>
             )}
