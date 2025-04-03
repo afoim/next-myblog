@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <h1>二叉树树的个人博客</h1>
+        <h1>二叉树树的博客</h1>
         <div className={styles.slogan}>
           <p>
             欢迎！本博客使用
