@@ -1,3 +1,7 @@
+export const metadata = {
+  title: '搜索结果 - 二叉树树的博客'
+}
+
 import { searchPostsWithDetails } from '@/lib/posts'
 import Link from 'next/link'
 import styles from './results.module.css'

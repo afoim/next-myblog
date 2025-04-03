@@ -6,6 +6,14 @@ interface PageParams {
   params: Promise<{ slug: string }>
 }
 
+export async function generateMetadata({ params }) {
+  const post = await getPostBySlug(params.slug)
+  return {
+    title: `${post.title} - 二叉树树的博客`,
+    description: post.summary
+  }
+}
+
 export default async function Post({ params }: PageParams) {
   try {
     const resolvedParams = await params
